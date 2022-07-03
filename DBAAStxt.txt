@@ -1,0 +1,18 @@
+cloud foundary -html 
+paas- create a website about yourself and host 
+
+kvm, idaas
+idaas soap
+rest
+
+
+
+DBAAS:
+PASSWORD:
+hp6mmJh5hNtKDNsq
+
+Mongo shell connection and mongoapplication connection
+download mongosh package in your folder
+PYMONGO:
+pip install pymongo
+python -m pip install dnspython
