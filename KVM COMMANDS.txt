@@ -1,0 +1,119 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. egrep -c ' lm' /proc/cpuinfo
+
+2. uname -a
+
+3. apt-cache search qemu-kvm
+
+4. apt-get update
+5. ps -ef |grep apt
+//////////apt-install qemu-kvm
+apt-install libvirt-bin qemu-system virt-manager bridge-utils////////////
+
+6. apt-get install qemu-kvm
+7.apt-get install qemu-system
+8. apt-get install virt-manager
+9. apt-get install bridge-utils
+10.//Editing the Config File:
+sudo nano /etc/libvirt/libvirtd.conf
+
+/////TEXT///////
+listen_addr="0.0.0.0"
+unix_sock_group="libvirt"
+unix_sock_ro_perms="0777"
+unix_sock_rw_perms="0777"
+unix_sock_dir="/var/run/libvirt"
+auth_unix_ro="none"
+auth_unix_rw="none"
+
+11. virsh list
+
+12. Restarting the particular service
+After editing .conf file
+
+12. /etc/init.d/libvirtd restart
+
+13. /etc/init.d/libvirtd status
+
+14. Website to download:
+https://download.cirros-cloud.net/0.3.6/cirros-0.3.6-i386-disk.img
+15. just save the file
+16. New VM 
+17.Import existing VM
+18. Locate the Vm in downloads folder
+19. Selecting image from local disk
+20.Choose OS type and version
+21. Choose memory and CPU
+Memory-1024 and CPU-1
+22. Name for Virtual Machine- Cloud_lab
+23. Finished creating VM
+https://download.cirros-cloud.net/0.3.6/cirros-0.3.6-i386-disk.img
+Booted VM is now ready:
+
+
+
+
+
+
+
+///////CITRIX://///////
+Install Citrix Server
+Setting up Xen until you see finish
+save and restore server connection -check this box.
+create new server -top left 
+select ubuntuversion (below 12.04 -64 bit)
+give it a name -SharonVinoodhini
+click next
+Install from ISO library or DVD drive
+Set username and password
+New VM will be created now
+copy this Vm to server 2
+Right click on the VM created and - copy VM
+Check Xen Server2 in destination
+Migration network- Network 0(management) on xen server2
+then click finish
+Now your Vm will be copied to xen server 2
+Go and check on that server
+
+
+
+
+////Link for cloudsim:
+http://www.cloudbus.org/cloudsim/examples.html
+
+
+git clone: https://github.com/Avinashroffl/duolc.git
+
+
+
+
+////SOAP: request.getRequestDispatcher("/HelloWorldView.jsp").forward(request, response); in servelet file
+  
