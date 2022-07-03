@@ -25,6 +25,14 @@
 
 
 
+ com.pegaxchange.java.web
+dynamic -> create tomcat in properties-lib-classpath- addnew tomcat and then add external jars
+new servlet- HelloWorldServlet
+new jsp- HelloWorldView
+add html code here
+servlett- one line change
+run on server
+/HelloWorldServlet
 
 
 1. egrep -c ' lm' /proc/cpuinfo
