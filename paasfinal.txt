@@ -1,0 +1,21 @@
+PAAS:
+rajnash69@gmail.com
+SHaonIVa2k@
+
+
+API KEY:Zm6GIFXRPn1OIqDJ1tYhfVEedmSXq82zee1qcR9nGCEb
+
+INDEX.php change
+COMMIT- click on commit button
+pudh all option
+sync
+go back delivery pipelines
+enable the stages
+visit app url
+
+change this in toget function in servlet:
+request.getRequestDispatcher("/HelloWorldView.jsp").forward(request, response);
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("/HelloWorldView.jsp").forward(request, response);
+	}
