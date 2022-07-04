@@ -9,6 +9,11 @@ CLOUDSIM LINK: https://github.com/Cloudslab/cloudsim/blob/master/modules/cloudsi
 
 DRIVE LINK:https://drive.google.com/drive/folders/1aANpWDrsVpxQhvPFoXiarCEWySE3dGC0
 
+
+A cloudlet is a small-scale data center or cluster of computers designed to quickly provide cloud computing services to mobile devices, such as smartphones, tablets and wearable devices, within close geographical proximity.
+
+Brokers are one of the layers in Cloud systems. A broker coordinates things between Providers (Datacenters including their services) and Cloud users. In Cloudsim, it typically instantiates VMs and Tasks. To be more specific, it gets tasks and Vms from users, then creates and sends them to datecenters to be executed.
+
 DBAAS:
 PASSWORD:
 hp6mmJh5hNtKDNsq
