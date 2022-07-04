@@ -1,0 +1,260 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LINK:
+https://www.journaldev.com/9131/soap-webservices-in-java-example-eclipse
+
+
+servlet:
+
+java package:
+com.pegaxchange.java.web
+class:
+HelloWorldServlet
+
+HelloWorldServlet.java:
+request.getRequestDispatcher("/HelloWorldView.jsp").forward(request, response);
+
+HelloWorldView.jsp:
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+ <head>
+<title>Web app - Simple Interest Calculation</title>
+ <script>
+ function calculate()
+ {
+ p = document.getElementById("p").value;
+ n = document.getElementById("n").value;
+ r = document.getElementById("r").value;
+ result = document.getElementById("result");
+ if(p<=0){
+ alert("Please enter the positive value");
+ p.focus();
+ return false;
+ }
+ result.innerHTML = "The interest is " + (p*n*r/100);
+ }
+ </script>
+ <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ <h1>Simple Interest Calculation</h1>
+ Amount: <input id="p"><br/>
+ Rate:<input type="range" id="r" name="r" min="1" max="20" value="0"
+ oninput="amount.value=r.value"> 
+ <output id="amount" name="amount" for="r">0</output><br/>
+ No. of Years: <input type="number" id="n" name="n" min="1" max="25"><br/>
+ <button onclick="calculate()">Compute</button>
+ <div>
+ <p id="result"></p>
+ </div>
+ </body>
+</html>
+
+HelloWorldServlet.java:
+
+package com.pegaxchange.java.web;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+/**
+* Servlet implementation class HelloWorldServlet
+*/
+@WebServlet("/HelloWorldServlet")
+public class HelloWorldServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+ 
+ /**
+ * @see HttpServlet#HttpServlet()
+ */
+ public HelloWorldServlet() {
+ super();
+ // TODO Auto-generated constructor stub
+ }
+/**
+* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws 
+ServletException, IOException {
+// TODO Auto-generated method stub
+request.getRequestDispatcher("/HelloWorldView.jsp").forward(request, response);}
+/**
+* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws 
+ServletException, IOException {
+// TODO Auto-generated method stub
+doGet(request, response);
+}
+}
+
+
+
+
+
+
+
+dynamic
+1class
+name:Person
+com.journaldev.jaxws.beans
+import Serializable
+
+CODE:
+
+package com.journaldev.jaxws.beans;
+
+import java.io.Serializable;
+
+public class Person implements Serializable{
+
+	private static final long serialVersionUID = -5577579081118070434L;
+	
+	private String name;
+	private int age;
+	private int id;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	@Override
+	public String toString(){
+		return id+"::"+name+"::"+age;
+	}
+
+}
+
+
+
+
+1interface
+PersonService
+CODE:
+
+package com.journaldev.jaxws.service;
+
+import com.journaldev.jaxws.beans.Person;
+
+public interface PersonService {
+
+	public boolean addPerson(Person p);
+	
+	public boolean deletePerson(int id);
+	
+	public Person getPerson(int id);
+	
+	public Person[] getAllPersons();
+}
+
+
+1 class
+PersonServiceImpl
+CODE:
+
+package com.journaldev.jaxws.service;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import com.journaldev.jaxws.beans.Person;
+
+public class PersonServiceImpl implements PersonService {
+
+	private static Map<Integer,Person> persons = new HashMap<Integer,Person>();
+	
+	@Override
+	public boolean addPerson(Person p) {
+		if(persons.get(p.getId()) != null) return false;
+		persons.put(p.getId(), p);
+		return true;
+	}
+
+	@Override
+	public boolean deletePerson(int id) {
+		if(persons.get(id) == null) return false;
+		persons.remove(id);
+		return true;
+	}
+
+	@Override
+	public Person getPerson(int id) {
+		return persons.get(id);
+	}
+
+	@Override
+	public Person[] getAllPersons() {
+		Set<Integer> ids = persons.keySet();
+		Person[] p = new Person[ids.size()];
+		int i=0;
+		for(Integer id : ids){
+			p[i] = persons.get(id);
+			i++;
+		}
+		return p;
+	}
+
+}
+
+
+New Project- Webservice
+move client and server bar to testing mode
+select tomcat server alone
+next-next-progressing
+next for clientsrc and now for JAX-RPC JSPs keep the same
+and finish
+launch only in UDDI registry
+copy the link address and you can run it on any browser

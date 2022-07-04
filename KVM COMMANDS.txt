@@ -75,10 +75,10 @@ After editing .conf file
 https://download.cirros-cloud.net/0.3.6/cirros-0.3.6-i386-disk.img
 15. just save the file
 16. New VM 
-17.Import existing VM
+17.Import existing disk image
 18. Locate the Vm in downloads folder
 19. Selecting image from local disk
-20.Choose OS type and version
+20.Choose OS type and version-generic and generic
 21. Choose memory and CPU
 Memory-1024 and CPU-1
 22. Name for Virtual Machine- Cloud_lab
@@ -86,6 +86,7 @@ Memory-1024 and CPU-1
 https://download.cirros-cloud.net/0.3.6/cirros-0.3.6-i386-disk.img
 Booted VM is now ready:
 
+file- VM MANAGER in this you will see the name of your VM
 
 
 

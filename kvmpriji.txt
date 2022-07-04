@@ -1,0 +1,32 @@
+free -m
+top
+apt-cache search net-tools
+sudo apt get update
+sudo apt get
+apt-cache search net-tools
+apt-get install net-tools
+netstat -ntlp
+apt-cache search qemu-kv
+apt-get install qemu-kvm
+apt-get update
+apt-get install net-tools
+apt-get install qemu-kvm virt-manager bridge-utils qemu-system
+apt-get install qemu-kvm virt-manager bridge-utils qemu-system virt-manager
+nano /etc/libvirt/libvirtd.conf
+nano /etc/libvirt/libvirtd.conf
+nano /etc/libvirt/libvirtd.conf
+
+listen_addr = "0.0.0.0"
+unix_sock_group = "libvirt"
+unix_sock_ro_perms = "0777"
+unix_sock_rw_perms = "0777"
+unix_sock_dir = "/var/run/libvirt"
+auth_unix_ro = "none"
+auth_unix_rw = "none"
+
+
+
+/etc/init.d/libvirtd restart
+/etc/init.d/libvirtd status
+virt-manager
+virsh list
